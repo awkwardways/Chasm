@@ -1,7 +1,7 @@
 # Chasm
 Assembler for the Chip8 assembly language. 
 
-The Chip8 Assembly language contains the amazing amount of 29 mnemonics! These are:\n
+The Chip8 Assembly language contains the amazing amount of 29 mnemonics! These are:
 CLS (clear screen)
 JMP (jumps to a label or an address)
 RET (returns from subroutine)
