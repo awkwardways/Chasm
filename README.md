@@ -34,11 +34,15 @@ REGL (Regload. Loads V0 to VX with I to I+x. Does not Modify the value of I eith
 You can use the . symbol to specify the origin of a chunk of code.
 
 The @ symbol means that you want to load a certain address with a certain byte, for example:
+```
   @0055 40
+```
 This loads the address 0x0055 with the byte 0x40.
 
 The $ symbol is used in address dependent instructions to specify the address:
-  jmp $0201 (jumps to address 0x0201)
+```
+  jmp $0201 //jumps to address 0x0201
+```
 
 Labels can be declared with an id followed by a colon:
   main:
