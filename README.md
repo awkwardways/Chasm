@@ -2,19 +2,22 @@
 Assembler for the Chip8 assembly language. 
 
 The Chip8 Assembly language contains the amazing amount of 29 mnemonics! These are:
-## CLS 
+### CLS 
 Clears the screen
-## JMP address/label
+### JMP address/label
 Jumps to a label or an address
-## RET 
+### RET 
 Returns from subroutine
-## CALL address/label
+### CALL address/label
 Calls the subroutine at that address/calls subroutine with that label
-## SKPE 
-(Skip on equal. Skips next instruction if the register is equal to a register/number)
-SKPD (Skip on different. Skips next instruction if the register is different from a register/number)
-MOV (Moves a number, or the contents of another register, to the specified register)
-ADD (Adds a register to a register/number and puts the result in the first register.)
+### SKPE 
+Skip on equal. Skips next instruction if the register is equal to a register/number
+### SKPD 
+Skip on different. Skips next instruction if the register is different from a register/numbe)
+### MOV 
+Moves a number, or the contents of another register, to the specified register
+### ADD 
+Adds a register to a register/number and puts the result in the first register.
 OR (Logically ORs two registers and puts the result in the first register)
 AND (Logically ANDs two registers and puts the result in the first register)
 XOR (Logically XORs two register and puts the result in the first register)
