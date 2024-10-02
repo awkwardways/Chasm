@@ -7,34 +7,34 @@ Chasm is an assembler for the Chip8 assembly language. Chasm stands for Chip8 as
 
 # Instruction Mnemonics
 
-**CLS** Clear screen. 
-**RET** Return from subroutine.
-**JMP label/address** Jumps to the specified label or address.
-**CALL label/address** Calls the specified subroutine with that label/address.
-**SKPE Vx, Vy/Num** Compares register Vx to register Vy/num and skips the next instruction if equal.
-**SKPD Vx, Vy/Num** Like SKPE but skips the next instrucion on different.
-**MOV Vx, VY/Num** Moves the contents of Vy/the value num into the register Vx.
-**ADD Vx, Vy/Num** Adds the contents of Vy/the value of Num to Vx, and stores the result in Vx. Sets Vf to 1 if there is an overflow.
-**OR Vx, Vy** Logically ORs the contents of Vx with the contents of Vy, and stores the result in Vx.
-**AND Vx, Vy** Logically ANDs the contents of Vx with the contents of Vy, and stores the result in Vx.
-**XOR Vx, Vy** Logically XORs the contents of Vx with the contents of Vy, and stores the result in Vx.
-**SUB Vx, Vy** Substracts the contents of Vy from Vx (Vx - Vy), and stores the result in Vx. Sets Vf to 1 if there is an underflow.
-**SHR Vx** Shifts the contents of Vx to the right by one bit, and stores the result in Vx. Stores the most important bit previous to shifting in Vf.
-**SHL Vx** Shifts the contents of Vx to the left by one bit, and stores the result in Vx. Stores the least important bit previous to shifting in Vf.
-**STI address** Sets the I pointer to the specified address.
-**JMPO label/address** Jumps to the specified label/address with an offset of V0.
-**RND Vx, Num** Logically ANDs a randomly generated number with Num, and stores the result in Vx.
-**DRW Vx, Vy, N** Draws the sprite (with a height of N) pointed to by the I pointer, at the position (Vx, Vy).
-**SKPK Vx** Skips the next instruction if the key currently being pressed is the same as the key stored in Vx.
-**SKPNK Vx** Skips the next instruction if the key currently being pressed is different from the key stored in Vx.
-**GDLY Vx** Stores the value of the Delay Timer in the Vx register.
-**SDLY Vx** Sets the Delay Timer to the value stored in the Vx register.
-**GKEY Vx** Waits for a key press and stores the key in the Vx register.
-**SSND Vx** Sets the Sound Timer to the value stored in the Vx register.
-**ADDI Vx** Increments the pointer I by the value stored in Vx.
-**BCD Vx** Dumps the BCD representation to the address pointed to by the I pointer. The hundreds digit get stored in I, the tens digit gets stored in (I+1) and the ones digit get stored in (I+2).
-**REGL Vx** Loads the registers V0-Vx with the contents pointed to by the I pointer, increasing I by 1 for each register written.
-**REGD Vx** Dumps the contents of the V0-Vx registers starting at the address pointed to by the I pointer, increasing I by 1 for each address written.
+**CLS** Clear screen. <br/>
+**RET** Return from subroutine.<br/>
+**JMP label/address** Jumps to the specified label or address.<br/>
+**CALL label/address** Calls the specified subroutine with that label/address.<br/>
+**SKPE Vx, Vy/Num** Compares register Vx to register Vy/num and skips the next instruction if equal.<br/>
+**SKPD Vx, Vy/Num** Like SKPE but skips the next instrucion on different.<br/>
+**MOV Vx, VY/Num** Moves the contents of Vy/the value num into the register Vx.<br/>
+**ADD Vx, Vy/Num** Adds the contents of Vy/the value of Num to Vx, and stores the result in Vx. Sets Vf to 1 if there is an overflow.<br/>
+**OR Vx, Vy** Logically ORs the contents of Vx with the contents of Vy, and stores the result in Vx.<br/>
+**AND Vx, Vy** Logically ANDs the contents of Vx with the contents of Vy, and stores the result in Vx.<br/>
+**XOR Vx, Vy** Logically XORs the contents of Vx with the contents of Vy, and stores the result in Vx.<br/>
+**SUB Vx, Vy** Substracts the contents of Vy from Vx (Vx - Vy), and stores the result in Vx. Sets Vf to 1 if there is an underflow.<br/>
+**SHR Vx** Shifts the contents of Vx to the right by one bit, and stores the result in Vx. Stores the most important bit previous to shifting in Vf.<br/>
+**SHL Vx** Shifts the contents of Vx to the left by one bit, and stores the result in Vx. Stores the least important bit previous to shifting in Vf.<br/>
+**STI address** Sets the I pointer to the specified address.<br/>
+**JMPO label/address** Jumps to the specified label/address with an offset of V0.<br/>
+**RND Vx, Num** Logically ANDs a randomly generated number with Num, and stores the result in Vx.<br/>
+**DRW Vx, Vy, N** Draws the sprite (with a height of N) pointed to by the I pointer, at the position (Vx, Vy).<br/>
+**SKPK Vx** Skips the next instruction if the key currently being pressed is the same as the key stored in Vx.<br/>
+**SKPNK Vx** Skips the next instruction if the key currently being pressed is different from the key stored in Vx.<br/>
+**GDLY Vx** Stores the value of the Delay Timer in the Vx register.<br/>
+**SDLY Vx** Sets the Delay Timer to the value stored in the Vx register.<br/>
+**GKEY Vx** Waits for a key press and stores the key in the Vx register.<br/>
+**SSND Vx** Sets the Sound Timer to the value stored in the Vx register.<br/>
+**ADDI Vx** Increments the pointer I by the value stored in Vx.<br/>
+**BCD Vx** Dumps the BCD representation to the address pointed to by the I pointer. The hundreds digit get stored in I, the tens digit gets stored in (I+1) and the ones digit get stored in (I+2).<br/>
+**REGL Vx** Loads the registers V0-Vx with the contents pointed to by the I pointer, increasing I by 1 for each register written.<br/>
+**REGD Vx** Dumps the contents of the V0-Vx registers starting at the address pointed to by the I pointer, increasing I by 1 for each address written.<br/>
 
 ## Labels and addresses
 
