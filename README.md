@@ -80,6 +80,6 @@ Labels have a 0x200 offset applied to them.
 - Currently Chasm only supports hex numbers, so it interprets every single number written as hex. Support for binary and decimal numbers will be added.
 
 - Chasm also assumes that the Chip8 implementation uses a 4KB memory, and cannot write to anything beyond the address 0x0fff. Support for Chip8s with larger memory will be added.
-- The Vx = Vy - Vx instruction has not been added yet. Support for this instruction will be added.
+- The Vx = Vy - Vx instruction has not been added yet. Support for this instruction will be added.<br/>
 Chasm is a work in progress and my first "compiler" so any feedback is welcome! And thanks for checking it out.
 
