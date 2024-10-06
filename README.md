@@ -75,10 +75,25 @@ To write directly to an address you can use the @ symbol followed by the address
 This is most probably not very safe.
 Every single explicitly written address will be treated literally. This means that no offset will be applied to them.
 Labels have a 0x200 offset applied to them. 
-	 
-## Things that will be implemented
-- Currently Chasm only supports hex numbers, so it interprets every single number written as hex. Support for binary and decimal numbers will be added.
 
+## Number systems
+To indicate a decimal number you can use the 0d prefix:
+```
+drw v0, v1, 0d4
+```
+For  binary, use the 0b prefix:
+```
+drw v0, v1, 0b100
+```
+If a number has no prefix, the assembler will assume it's a hex number.  You can also be explicit and use the 0x prefix:
+```
+drw v0, v1, 0x4
+```
+```
+drw v0, v1, 4
+```
+
+## Things that will be implemented
 - Chasm also assumes that the Chip8 implementation uses a 4KB memory, and cannot write to anything beyond the address 0x0fff. Support for Chip8s with larger memory will be added.
 - The Vx = Vy - Vx instruction has not been added yet. Support for this instruction will be added.<br/>
 Chasm is a work in progress and my first "compiler" so any feedback is welcome! And thanks for checking it out.
