@@ -89,9 +89,9 @@ static token_t getAddress() {
   return temp;
 }
 
-static token_t getOrigin() {
-  token_t temp; 
-  temp = getAddress();
+static token_t getOrigin() { 
+	token_t temp; 
+	temp = getAddress();
   temp.tag = ORIGIN;
   return temp;
 }
@@ -114,15 +114,49 @@ static token_t getLexeme() {
   else temp.tag = findElement(symbolTable, temp.lexeme)->val;
   return temp;
 }
-
+// 0d255 0xff 0b11111111
 static token_t getNum() {
   token_t temp;
   temp.val = 0;
-  while(IS_NUM(*peekChar)) {
-    temp.val = temp.val * 16 + hexToDec(*peekChar);
-    peekChar++;
-    column++;
-  }
+	int base = 16;
+	switch(*(peekChar + 1)) {
+		case 'd':
+			peekChar += 2;
+			base = 10;
+			while(IS_NUM(*peekChar)) {
+				temp.val = temp.val * base + (*peekChar - 48);
+				peekChar++;
+				column++;
+			}
+		break;
+		
+		case 'b':
+			peekChar += 2;
+			base = 2;
+			while(IS_NUM(*peekChar)) {
+				temp.val = temp.val * base + (*peekChar - 48);
+				peekChar++;
+				column++;
+			}
+		break;
+
+		case 'x':
+		peekChar += 2;
+		while(IS_NUM(*peekChar)) {
+			temp.val = temp.val * base + hexToDec(*peekChar);
+			peekChar++;
+			column++;
+		}
+		break;
+
+		default:
+			while(IS_HEX(*peekChar)) {
+				temp.val = temp.val * base + hexToDec(*peekChar);
+				peekChar++;
+				column++;
+			}
+		break;
+	}
   temp.tag = NUM;
   return temp;
 }
